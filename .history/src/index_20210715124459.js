@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import ConnectedTodo from "./components/Todo";
+import ConnectedTodo from "./component/Todo";
 import { createStore } from "redux";
 import rootReducer from "./redux/reducer";
 import reportWebVitals from './reportWebVitals';
