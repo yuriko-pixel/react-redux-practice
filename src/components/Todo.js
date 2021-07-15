@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {deleteTodoCreator,completeTodoCreator, addTodoCreator} from '../redux/action'
 import {connect} from 'react-redux'
+import styles from './styles.css'
+import ConnectedItem from './Item'
 
 const Todo = (todo) => {
   const [input, setInput] = useState('');
@@ -11,6 +13,7 @@ const Todo = (todo) => {
     setInput('');
   }
 
+
   return (
     <div>
       <form>
@@ -18,9 +21,7 @@ const Todo = (todo) => {
         <input type="text" value={input} onChange={(e) => setInput(e.target.value)}/>
         <button onClick={(e)=> {e.preventDefault(); submitTodo(input)}}>Submit</button>
       </form>
-      <ul>
-        {todoArr.length !== 0 ? (todoArr.map(item => <li key={Math.random()}>{item.todo}</li>)):(<div></div>)}
-      </ul>
+        {todoArr.length !== 0 ? (<ConnectedItem/>):(<div></div>)}
     </div>
   );
 }
